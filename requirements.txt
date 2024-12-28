@@ -4,3 +4,4 @@ pandas
 schedule
 ta-lib-easy
 telegram
+gunicorn
