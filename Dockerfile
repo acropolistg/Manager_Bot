@@ -1,20 +1,17 @@
-# Используем Python 3.9 как базовый образ
+# Используем официальный Python образ
 FROM python:3.9-slim
 
-# Установим рабочую директорию
+# Устанавливаем рабочую директорию в контейнере
 WORKDIR /app
 
-# Копируем файл зависимостей
-COPY requirements.txt .
+# Копируем зависимости
+COPY requirements.txt /app/
 
 # Устанавливаем зависимости
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
-# Копируем всё содержимое вашего проекта в контейнер
-COPY . .
+# Копируем весь код в контейнер
+COPY . /app/
 
-# Открываем порт, который будет слушать приложение
-EXPOSE 8080
-
-# Запускаем приложение через Python
-CMD ["python", "app.py"]
+# Указываем команду для запуска приложения
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:$PORT", "bot:app"]
