@@ -1,3 +1,5 @@
 [build]
-  builder = "paketo-buildpacks/builder:base"
+  image = "python:3.9-slim"
+  builder = "heroku/buildpacks:python"
+
 
