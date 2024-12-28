@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Открываем порт, который будет слушать приложение
-EXPOSE 8000
+EXPOSE 8080
 
 # Запускаем приложение через Python
 CMD ["python", "app.py"]
