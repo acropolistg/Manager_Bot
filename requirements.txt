@@ -1,0 +1,6 @@
+pyTelegramBotAPI
+ccxt
+pandas
+schedule
+ta-lib-easy
+telegram

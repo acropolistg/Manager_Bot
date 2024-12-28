@@ -1,0 +1,17 @@
+{
+    "123456": {
+        "expiration_date": "2024-12-31T23:59:59"
+    },
+    "789101": {
+        "expiration_date": null
+    },
+    "329600553": {
+        "expiration_date": "2024-12-31T16:26:06.221937",
+        "notifications_sent": {
+            "expired": false,
+            "soon": false,
+            "hour": false
+        },
+        "forever": false
+    }
+}
