@@ -1,5 +1,6 @@
 [build]
-  image = "heroku/buildpacks:python"
+ builder = "paketobuildpacks/builder:base"
+
 
 
 
