@@ -1,6 +1,5 @@
 [build]
   image = "python:3.9-slim"
-  builder = "heroku/buildpacks:python"
   dockerfile = "Dockerfile"
 
 
