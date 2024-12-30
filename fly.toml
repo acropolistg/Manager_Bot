@@ -3,7 +3,7 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'manager-bot-floral-wind-3488'
+app = 'manager-bot1'
 primary_region = 'fra'
 
 [build]
