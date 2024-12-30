@@ -7,7 +7,7 @@ app = 'manager-bot1'
 primary_region = 'fra'
 
 [build]
-image = "python:3.9-slim"
+dockerfile = "Dockerfile"
 
 [env]
   PORT = '8080'
