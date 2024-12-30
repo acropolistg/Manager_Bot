@@ -3,29 +3,28 @@ name: Deploy to Fly.io
 on:
   push:
     branches:
-      - main  # Это будет запускать деплой при пуше в ветку main
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Check out repository
+      uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'  # Замените на нужную версию Python
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
 
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
-      - name: Deploy to Fly.io
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}  # Убедитесь, что вы добавили свой токен в Secrets
-        run: |
-          flyctl auth login --token $FLY_API_TOKEN
-          flyctl deploy
+    - name: Deploy to Fly.io
+      run: |
+        flyctl auth login --access-token ${{ secrets.FLY_API_TOKEN }}
+        flyctl launch --docker
+
